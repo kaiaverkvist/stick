@@ -49,7 +49,7 @@ func TestFilters(t *testing.T) {
 		{"len slice", func() stick.Value { return filterLength(nil, []string{"h", "e"}) }, 2},
 		{"capitalize", func() stick.Value { return filterCapitalize(nil, "word") }, "Word"},
 		{"lower", func() stick.Value { return filterLower(nil, "HELLO, WORLD!") }, "hello, world!"},
-		{"slice", func() stick.Value { return filterSlice(nil, "hello", 1) }, "hell"},
+		{"slice", func() stick.Value { return filterSlice(nil, "hello", 3, 4) }, "hell"},
 		{"time_diff", func() stick.Value { return filterTimeDiff(nil, time.Now().AddDate(0, 0, -5)) }, "5 days ago"},
 		{"title", func() stick.Value { return filterTitle(nil, "hello, world!") }, "Hello, World!"},
 		{"trim", func() stick.Value { return filterTrim(nil, " Hello   ") }, "Hello"},

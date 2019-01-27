@@ -343,14 +343,14 @@ func filterRound(ctx stick.Context, val stick.Value, args ...stick.Value) stick.
 }
 
 func filterSlice(ctx stick.Context, val stick.Value, args ...stick.Value) stick.Value {
-	num := 0
+	firstNum := 0
 
 	if l := len(args); l >= 1 {
-		num = int(stick.CoerceNumber(args[0]))
+		firstNum = int(stick.CoerceNumber(args[0]))
 	}
 
 	input := stick.CoerceString(val)
-	subVal := input[:len(input)-num]
+	subVal := input[:len(input)-firstNum]
 	return subVal
 }
 
